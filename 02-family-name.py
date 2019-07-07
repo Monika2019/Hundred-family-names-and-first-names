@@ -2,7 +2,6 @@
 
 # author by : （学员ID)
 import random
-
 family_names = ( \
     "赵","钱","孙","李","周","吴","郑","王","冯","陈","褚","卫","蒋","沈","韩","杨","朱","秦","尤","许","何","吕","施","张", \
     "孔","曹","严","华","金","魏","陶","姜","戚","谢","邹","喻","柏","水","窦","章","云","苏","潘","葛","奚","范","彭","郎", \
@@ -86,21 +85,22 @@ girls_given_words2 = ( \
         '倩雪','美琳','欢馨','优璇','雨嘉','娅楠','明美','诗涵','黛滢','嫦曦', \
         '静香','凌薇','雅静','雪丽','依娜','婉玗','书怡','诗茵','灵静','睿婕','婉婷')
 
-
-is_boy = random.randint(1,2)
-one_or_two = random.randint(1,2)
-picked_name =""
-if is_boy == 1:
-    if one_or_two == 1:
-        picked_name = random.choice(boys_given_words1)
+for i in range(1,101):
+    one_name = random.choice(family_names)
+    is_boy = random.randint(1,2)
+    one_or_two = random.randint(1,2)
+    picked_name =""
+    if is_boy == 1:
+        if one_or_two == 1:
+            picked_name = random.choice(boys_given_words1)
+        else:
+            picked_name = random.choice(boys_given_words2)
     else:
-        picked_name = random.choice(boys_given_words2)
-else:
-    if one_or_two == 1:
-        picked_name = random.choice(girls_given_words1)
-    else:
-        picked_name = random.choice(girls_given_words2)
+        if one_or_two == 1:
+            picked_name = random.choice(girls_given_words1)
+        else:
+            picked_name = random.choice(girls_given_words2)
 
 
-full_name = one_name +picked_name
-print('\ndebug -- now given name is : %s'%(full_name))
+    full_name = one_name +picked_name
+    print('\ndebug -- now given name is : %s'%(full_name))
